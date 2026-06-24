@@ -47,3 +47,8 @@
   <li>Identified the correct line placement to implement the placeholder in the SalesByRegionTabularComponent.</li>
   <li>Code was implemented: Line 18 Code Comment. Line 19 Placeholder.</li>
 </ul>
+
+<h2>Testing</h2>
+<ul>
+  <li>Tests Passed, and the application is viewed as running with the placeholder added.</li>
+</ul>
