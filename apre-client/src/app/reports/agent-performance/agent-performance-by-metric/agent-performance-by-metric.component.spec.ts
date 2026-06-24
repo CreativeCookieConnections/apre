@@ -5,6 +5,8 @@
  * Description: Unit tests for the AgentPerformanceByMetricComponent
  */
 
+// Note: The following unit tests are designed to test the functionality of the AgentPerformanceByMetricComponent. The tests cover the creation of the component, the display of the title, the update of the metricType property, and the behavior when metricType is not selected.
+
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { AgentPerformanceByMetricComponent } from './agent-performance-by-metric.component';

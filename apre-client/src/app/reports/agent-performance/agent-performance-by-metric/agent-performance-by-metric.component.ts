@@ -5,6 +5,7 @@
  * Description: Agent performance by metric type component. 
  */
 
+// This component allows users to select a metric type and a date range to view agent performance data in both chart and table formats. It fetches data from the backend API based on user selections and displays it accordingly. The component also handles cases where no data is returned or when there are errors in fetching data, providing appropriate user feedback.
 import { Component } from '@angular/core';
 import { CalendarComponent } from '../../../shared/calendar/calendar.component';
 import { CommonModule, DatePipe } from '@angular/common';
