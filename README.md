@@ -9,8 +9,8 @@
 <ul>
   <li>apre/apre-server/src/routes/reports/agent-performance/index.js</li>
   <li>apre/apre-server/test/routes/reports/agent-performance/index.spec.ts</li>
-  <li>apre/apre-client/src/app/reports/agent-performance/agent-performance-by-metric/agent-performance.component.ts</li>
-  <li>apre/apre-client/src/app/reports/agent-performance/agent-performance-by-metric/agent-performance.component.spec.ts</li>
+  <li>apre/apre-client/src/app/reports/agent-performance/agent-performance-by-metric/agent-performance-by-metric.component.ts</li>
+  <li>apre/apre-client/src/app/reports/agent-performance/agent-performance-by-metric/agent-performance-by-metric.component.spec.ts</li>
   <li>apre/apre-client/src/app/app.routes.ts</li>
 </ul>
 
