@@ -15,6 +15,8 @@ import { TableComponent } from './../../../shared/table/table.component';
         <div class="form__group">
           <label class="label" for="region">Region</label>
           <select class="select" formControlName="region" id="region" name="region">
+            <!--APRE Minor Task m-024 Week 4: Added a placeholder to the region label in the SalesRegionTabularComponent to improve user experience and clarity. -->
+            <option value="" disabled selected>Select Region</option>
             @for(region of regions; track region) {
               <option value="{{ region }}">{{ region }}</option>
             }
