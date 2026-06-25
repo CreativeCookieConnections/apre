@@ -1,7 +1,15 @@
+/**
+ * Author: Aisha Keller
+ * Date: 06/24/2026
+ * File: customer-feedback-by-year.component.spec.ts
+ * Description: This file contains the unit tests for the CustomerFeedbackByYearComponent class. It tests the component's functionality, including form validation, data fetching, and error handling.
+ */
+
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { CustomerFeedbackByYearComponent } from './customer-feedback-by-year.component';
 import { environment } from '../../../../environments/environment';
+import it from '@angular/common/locales/it';
 
 describe('CustomerFeedbackByYearComponent', () => {
 	let component: CustomerFeedbackByYearComponent;
@@ -23,12 +31,14 @@ describe('CustomerFeedbackByYearComponent', () => {
 		httpMock.verify();
 	});
 
+    // m-106 Week 4 Test 1: Test for form validation when no year is selected.
 	it('should show an error when submitting without selecting a year', () => {
 		component.onSubmit();
 
 		expect(component.errorMessage).toBe('Please select a year.');
 	});
 
+    // m-106 Week 4 Test 2: Test for successful data fetching and mapping when a year is selected.
 	it('should fetch and map customer feedback by year', () => {
 		component.yearForm.controls['year'].setValue(2024 as any);
 
@@ -55,6 +65,7 @@ describe('CustomerFeedbackByYearComponent', () => {
 		expect(component.errorMessage).toBe('');
 	});
 
+    // m-106 Week 4 Test 3: Test for handling empty results when a year is selected.
 	it('should handle empty results for a selected year', () => {
 		component.yearForm.controls['year'].setValue(2024 as any);
 
