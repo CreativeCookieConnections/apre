@@ -52,3 +52,39 @@
 <ul>
   <li>Tests Passed, and the application is viewed as running with the placeholder added.</li>
 </ul>
+
+<br>
+
+<h1>Week 4 Major Changes </h1>
+
+<h3>Major Task: M-106</h3>
+<h2>Customer Feedback by Year</h2>
+<p>Create an API to fetch Customer Feedback data by Year and build an Angular component to display Customer Feedback data by Year using ChartComponent or TableComponent with 3 Unit Tests each.</p>
+
+<h2>Files Added or Updated</h2>
+<ul>
+  <li> (Updated): apre/apre-server/src/routes/reports/customer-feedback/index.js</li>
+  <li> (Updated): apre/apre-server/test/routes/reports/customer-feedback/index.spec.js</li>
+  <li> (Added): apre/apre-client/src/app/reports/customer-feedback/customer-feedback-by-year/customer-feedback-by-year.component.ts </li>
+  <li> (Added): apre/apre-client/src/app/reports/customer-feedback/customer-feedback-by-year/customer-feedback-by-year.component.spec.ts </li>
+  <li> (Updated): apre/apre-client/src/app/app.routes.ts </li>
+  <li> (Updated): apre/apre-client/src/app/layouts/main-layout/main-layout. component.ts</li>
+</ul>
+
+<h2>Details</h2>
+<ul>
+  <li> Updated the index.js file under customer-feedback to create an API endpoint that GETs customer feedback data by year.</li>
+  <li> Updated the index.spec.js file in the customer-feedback folder to create 3 corresponding unit tests that test the functionality of the API endpoint that GETS customer feedback data by year. </li>
+  <li> Added a customer-feedback-by-year.component.ts file to implement the Angular Component to display customer feedback by year. Created the chart and table to showcase data.</li>
+  <li> Added a customer-feedback-by-year.component.spec.ts file to create 3 corresponding unit tests for the new CustomerFeedbackByYear component.</li>
+  <li> Updated the app.routes.ts file to wire everything together.</li>
+  <li> Updated the main-layout to update the application's sidebar to include the CustomerFeedbackByYear component listed under Customer Feedback.</li>
+  <li> Validated all 6 Unit tests to be passing.</li>
+  <li> Validated that the application is working, and the Customer Feedback By Year is responsive. The chart renders with channel labels and rating values. The styling is consistent with existing report pages. The year in 2023 responds with data, while other years do not. </li>
+
+  <h2>Testing</h2>
+  <ul>
+    <li> Conducted test through VSC terminal to verify Unit Tests have passed.</li>
+    <li> Verified the application is functioning correctly by running the server and client together and signing into the application.</li>
+  </ul>
+</ul>
