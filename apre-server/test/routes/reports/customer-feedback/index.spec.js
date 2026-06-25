@@ -75,4 +75,62 @@ describe('Apre Customer Feedback API', () => {
       type: 'error'
     });
   });
+
+  // m-106 Week 4 Test 1: Returns 200 with channels + ratingAvg when year is provided.
+  it('should return 200 with channels + ratingAvg when year is provided', async () => {
+    mongo.mockImplementation(async (callback) => {
+      const db = {
+        collection: jest.fn().mockReturnThis(),
+        aggregate: jest.fn().mockReturnValue({
+          toArray: jest.fn().mockResolvedValue([
+            {
+              channels: ['Email', 'Phone'],
+              ratingAvg: [4.5, 3.8]
+            }
+          ])
+        })
+      };
+      await callback(db);
+    });
+
+    const response = await request(app).get('/api/reports/customer-feedback/customer-feedback-by-year?year=2024'); // Send a GET request to the customer-feedback-by-year endpoint with year parameter
+
+    // Expect a 200 status code
+    expect(response.status).toBe(200);
+
+    // Expect the response body to match the expected data
+    expect(response.body).toEqual([
+      {
+        channels: ['Email', 'Phone'],
+        ratingAvg: [4.5, 3.8]
+      }
+    ]);
+  });
+
+  // m-106 Week 4 Test 2: Returns 400 if the year parameter is missing.
+  it('should return 400 if the year parameter is missing', async () => {
+    const response = await request(app).get('/api/reports/customer-feedback/customer-feedback-by-year'); // Send a GET request to the customer-feedback-by-year endpoint with missing year
+    expect(response.status).toBe(400); // Expect a 400 status code
+
+    // Expect the response body to match the expected data
+    expect(response.body).toEqual({
+      message: 'year is required',
+      status: 400,
+      type: 'error'
+    });
+  });
+
+  // m-106 Week 4 Test 3: Returns 404 for an invalid endpoint 
+  it('should return 404 for an invalid endpoint', async () => {
+    // Send a GET request to an invalid endpoint
+    const response = await request(app).get('/api/reports/customer-feedback/invalid-endpoint');
+    expect(response.status).toBe(404); // Expect a 404 status code
+    
+    // Expect the response body to match the expected data
+    expect(response.body).toEqual({
+      message: 'Not Found',
+      status: 404,
+      type: 'error'
+    });
+  });
 });
